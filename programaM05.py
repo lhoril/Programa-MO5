@@ -37,7 +37,7 @@ def telegraph():
             print("Morse code only uses .- or blank space please, try again:")
             print("If you want to quit enter E to exit:")
             message = input()
-            if(message=="E"):
+            if(message.upper=="E"):
                 exit()
     for char in message:
         beep(char)

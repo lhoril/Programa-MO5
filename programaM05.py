@@ -1,4 +1,8 @@
 import random
+import winsound
+import time
+import re
+import os
 
 #Program of Arnau, Works Good!
 #This program tries to guess a random character.
@@ -21,6 +25,51 @@ def guessCharacter():
             guessed = True
         else:
             print("Incorrect guess. Try again.")
+            
+##Oriol's Program
+def telegraph():
+    print("Enter a morse code message and the computer will play it:")
+    correct = False
+    message = input()
+    while(not correct):
+        correct =bool(re.match('^[\.\-\ *]+$',message))
+        if(not correct):
+            print("Morse code only uses .- or blank space please, try again:")
+            print("If you want to quit enter E to exit:")
+            message = input()
+            if(message=="E"):
+                exit()
+    for char in message:
+        beep(char)
 
+def beep(char):
+    if(char=='.'):
+        frequency = 600  
+        duration = 100  
+        winsound.Beep(frequency, duration)
+    elif(char==' '):
+        time.sleep(0.3)
+    elif(char == '-'):
+        frequency = 600 
+        duration = 300  
+        winsound.Beep(frequency, duration)
+
+##MAIN
 if __name__ == "__main__":
-    guessCharacter()
+    print("Choose a program to run")
+    print("1-Guess the letter")
+    print("2-Telegraph")
+    enter = input()
+    while enter != "1" and enter != "2" and enter != "3":
+        print("Wrong input try again")
+        print("If you want to quit enter E to exit:")
+        enter = input()
+        if(enter.upper=="E"):
+            exit()
+    if enter.strip()=="1":
+        os.system("cls")
+        guessCharacter()
+    if enter.strip()=="2":
+        os.system("cls")
+        telegraph()
+        

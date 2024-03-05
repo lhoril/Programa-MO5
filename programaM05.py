@@ -55,6 +55,7 @@ def beep(char):
         winsound.Beep(frequency, duration)
 
 ##Cristopher's Program
+##This is a program that can make calculations.
 def Calculator():
     total = 0
     TeclaFinal = ""
@@ -88,6 +89,7 @@ def Calculator():
         os.system("cls")
 
 ##MAIN
+##The Main menu for the access from the programs.
 if __name__ == "__main__":
     print("Choose a program to run")
     print("1-Guess the letter")

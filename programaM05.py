@@ -55,13 +55,45 @@ def beep(char):
         winsound.Beep(frequency, duration)
 
 
-
+##Cristopher's Program
+def Calculator():
+    total = 0
+    TeclaFinal = ""
+    while(TeclaFinal != "E" and TeclaFinal != 'e'):
+        try:
+            number1 = int (input("Enter a number: "))
+            os.system("cls")
+            print("Select one operator to do the calculation")
+            operator = input(f"{number1} ")
+            os.system("cls")
+            if(operator != 'X' and operator != '*' and operator != 'x' and operator != '+' and operator != '/' and operator != '-'):
+                raise Exception("Introduce a correct operator")
+            print("Entra el segon numero")
+            number2 = int(input(f"{number1} {operator} "))
+            os.system("cls")
+            if(operator == 'X' or operator == '*' or operator == 'x'):
+                total = number1 * number2
+                print (f"{number1} {operator} {number2} = {total}")
+            elif(operator == '+'):
+                total = number1 + number2
+                print (f"{number1} {operator} {number2} = {total}")
+            elif(operator == '/'):
+                total = number1 / number2
+                print (f"{number1} {operator} {number2} = {total}")
+            elif(operator == '-'):
+                total = number1 - number2
+                print (f"{number1} {operator} {number2} = {total}")
+        except Exception as e:
+            print(e)   
+        TeclaFinal = input("if you want to continue using de calculator press INTRO and if you want to close it input E ")
+        os.system("cls")
 
 ##MAIN
 if __name__ == "__main__":
     print("Choose a program to run")
     print("1-Guess the letter")
     print("2-Telegraph")
+    print("3-Calculator")
     enter = input()
     while enter != "1" and enter != "2" and enter != "3":
         print("Wrong input try again")
@@ -75,3 +107,6 @@ if __name__ == "__main__":
     if enter.strip()=="2":
         os.system("cls")
         telegraph()
+    if enter.strip()=="3":
+        os.system("cls")
+        Calculator()

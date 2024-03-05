@@ -59,6 +59,7 @@ if __name__ == "__main__":
     print("Choose a program to run")
     print("1-Guess the letter")
     print("2-Telegraph")
+
     enter = input()
     while enter != "1" and enter != "2" and enter != "3":
         print("Wrong input try again")
@@ -72,4 +73,3 @@ if __name__ == "__main__":
     if enter.strip()=="2":
         os.system("cls")
         telegraph()
-        

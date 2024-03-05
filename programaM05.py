@@ -67,7 +67,7 @@ def Calculator():
             os.system("cls")
             if(operator != 'X' and operator != '*' and operator != 'x' and operator != '+' and operator != '/' and operator != '-'):
                 raise Exception("Introduce a correct operator")
-            print("Entra el segon numero")
+            print("Enter the second number")
             number2 = int(input(f"{number1} {operator} "))
             os.system("cls")
             if(operator == 'X' or operator == '*' or operator == 'x'):
@@ -92,7 +92,7 @@ if __name__ == "__main__":
     print("Choose a program to run")
     print("1-Guess the letter")
     print("2-Telegraph")
-
+    print("3-Calculator")
     enter = input()
     while enter != "1" and enter != "2" and enter != "3":
         print("Wrong input try again")
@@ -106,3 +106,6 @@ if __name__ == "__main__":
     if enter.strip()=="2":
         os.system("cls")
         telegraph()
+    if enter.strip()=="3":
+        os.system("cls")
+        Calculator()
